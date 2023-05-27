@@ -290,11 +290,11 @@ async def auto_filter(client, msg, spoll=False):
             await hmm.delete()            
         except Exception as e:
             logger.exception(e)
-            cdb = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+            cdb = await message.reply_photo(photo='https://te.legra.ph/file/471172796da37b50f4f4f.jpg', caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(IMDB_DELET_TIME)
             await cdb.delete()
     else:
-        crl = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+        crl = await message.reply_photo(photo='https://te.legra.ph/file/471172796da37b50f4f4f.jpg', caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(IMDB_DELET_TIME)
         await crl.delete()        
     if spoll:
