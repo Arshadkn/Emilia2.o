@@ -359,10 +359,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔕 ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴏsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴs 🔕', callback_data='start')
             ],[
             InlineKeyboardButton('👨‍🔧 ᴏᴡɴᴇʀ', callback_data='extra'),            
-            InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', callback_data='manuelfilter')
+            InlineKeyboardButton('🎬 ᴄʜᴀɴɴᴇʟ', url='https://t.me/CmRips')
             ],[
-            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', callback_data='autofilter'),
-            InlineKeyboardButton('🔒 ᴄʟᴏsᴇ', callback_data='coct')           
+            InlineKeyboardButton('👥 ɢʀᴏᴜᴘ', url='https://t.me/cenEma9'),
+            InlineKeyboardButton('🔒 ᴄʟᴏsᴇ', callback_data='close_data')           
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)             
         await query.edit_message_media(  
@@ -541,7 +541,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "extra":
         buttons = [[
             InlineKeyboardButton('⚙️ 𝙰𝙳𝙼𝙸𝙽 𝙾𝙽𝙻𝚈 ⚙️', callback_data='admin')
-            ],[
             InlineKeyboardButton('🔙 𝙱𝙰𝙲𝙺', callback_data='help'),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
