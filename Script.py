@@ -96,16 +96,14 @@ Sᴏʀʀʏ ɪ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ <a href=https://t.me/+eYWwkNUAKIQzMzNl
 • /disconnect  - <code>disconnect from a chat</code>
 • /connections - <code>list all your connections</code>"""
 
-    EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
+    EXTRAMOD_TXT = """<b>⍟───[🤴 ʙᴏᴛ ᴅᴇᴠ ᴅᴇᴛᴀɪʟs 🤴]───⍟
+👒 ᴏᴡɴᴇʀ ɴᴀᴍᴇ : Dᴇᴠɪɴ
+🍁 ᴜsᴇʀɴᴀᴍᴇ : @GxToS
+🍃 ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href=https://t.me/GxToSi>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 
-<b>NOTE:</b>
-these are the extra features of this bot
-
-<b>Commands and Usage:</b>
-• /id - <code>get id of a specifed user.</code>
-• /info  - <code>get information about a user.</code>
-• /imdb  - <code>get the film information from IMDb source.</code>
-• /search  - <code>get the film information from various sources.</code>"""
+🇮🇳 ʟᴀɴɢᴜᴀɢᴇ : ᴇɴɢʟɪsʜ , ᴍᴀʟᴀʏᴀʟᴀᴍ
+му нєαяt ιѕ α ѕtєяισ 📻,
+ιt'ѕ вєαtѕ fσя уσυ ѕσ ℓιѕtєn ¢ℓσѕє💔</b>"""
 
     ADMIN_TXT = """<b>ɴᴏᴛᴇ:</b>
 <code>Tʜɪs Mᴏᴅᴜʟᴇ Oɴʟʏ Wᴏʀᴋs Fᴏʀ Mʏ Aᴅᴍɪɴs</code>
