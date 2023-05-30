@@ -227,7 +227,7 @@ async def start(client, message):
             logger.exception(e)
             f_caption=f_caption
     if f_caption is None:
-        f_caption = f"{files.file_name}"
+        f_caption = f"{files.file_name}\n\n=========== • ✠ • ==========="
     buttons = [
                     [
                         InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data="close_pages"),
