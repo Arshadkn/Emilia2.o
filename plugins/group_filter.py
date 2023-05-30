@@ -166,7 +166,7 @@ async def advantage_spoll_choker(bot, query):
             await k.delete()
 
 
-@Client.on_message(filters.group & filters.text & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.incoming & filters.group)
+@Client.on_message(filters.group & filters.text & filters.incoming & filters.chat(-1001934895009) if AUTH_GROUPS else filters.text & filters.incoming & filters.group)
 async def give_filter(client, message):
     if G_FILTER:
         if G_MODE.get(str(message.chat.id)) == "False":
