@@ -22,7 +22,7 @@ disabled_group=filters.create(disabled_chat)
 async def ban_reply(bot, message):
     buttons = [[
         InlineKeyboardButton('📵 Aᴅᴍɪɴ', url=f'https://t.me/adpsycho'), 
-        InlineKeyboardButton(f'⚠️ Bᴀɴ Rᴇᴀsᴏɴ', 'banreo')
+        InlineKeyboardButton(f'⚠️ Uɴʙᴀɴ Mᴇ', 'banreo')
     ]]
     reply_markup=InlineKeyboardMarkup(buttons)
     ban = await db.get_ban_status(message.from_user.id)
