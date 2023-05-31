@@ -369,7 +369,7 @@ async def advantage_spell_chok(msg):
             InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
     ]]
     poi = await msg.reply_photo(photo="https://telegra.ph/file/4bb1968bd091453b0070c.jpg", caption=script.SPELL_CHECK_MAL, reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(IMDB_DELET_TIME)
+    await asyncio.sleep(20)
     await poi.delete()
     await message.delete()
 
