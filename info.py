@@ -86,8 +86,9 @@ PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 REQ_SUB = bool(environ.get("REQ_SUB", True))
 SESSION_STRING = environ.get("SESSION_STRING", "")
 
-
-
+#reqest channel 
+SUPPORT_CHAT_ID = environ.get("SUPPORT_CHAT_ID", "-1001822093025")
+REQST_CHANNEL = environ.get("REQST_CHANNEL", "-1001822093025")
 
 
 
