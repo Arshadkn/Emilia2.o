@@ -580,9 +580,8 @@ async def requests(bot, message):
                 success = False
         except Exception as e:
             await message.reply_text(f"Error: {e}")
-            pass
-        
-        else:ll
+            pass        
+        else:
        success = False
 
     
