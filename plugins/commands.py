@@ -511,7 +511,7 @@ async def send_chatmsg(bot, message):
     else:
         await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
-@Client.on_message(filters.command("admin") & filters.text & filters.incoming)
+@Client.on_message(filters.command("admin") & filters.regex("#admin") & filters.group)
 async def pm_text(bot, message):
     content = message.text
     user = message.from_user.first_name
