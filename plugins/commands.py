@@ -582,11 +582,7 @@ async def requests(bot, message):
             await message.reply_text(f"Error: {e}")
             pass
         else:
-
-        success = False
-
-    
-
+            success = False
     if success:
 
         btn = [[
