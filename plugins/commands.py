@@ -522,7 +522,7 @@ async def start(client, message):
         dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)                    
         await asyncio.sleep(10)
         await dp.delete() 
-        await message.delete()
+        await message.delete(1)
              
         
 
