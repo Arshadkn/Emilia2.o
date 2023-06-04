@@ -525,7 +525,7 @@ async def start(client, message):
         disable_web_page_preview=True,                    
         await asyncio.sleep(10), 
         await dp.delete(), 
-        await message.delete()
-             ) 
+        await message.delete()) 
+             
         
 
