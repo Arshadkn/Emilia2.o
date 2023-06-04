@@ -514,7 +514,7 @@ async def send_chatmsg(bot, message):
 
 
 
-@app.on_message(
+@Client.on_message(
     (
         filters.command("report")
         | filters.command(["admins", "admin"], prefixes="@")
