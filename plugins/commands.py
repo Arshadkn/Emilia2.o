@@ -513,7 +513,7 @@ async def send_chatmsg(bot, message):
 
 
 @Client.on_message(filters.command("report") & filters.incoming)
-async def adith(client, message):
+async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[           
             InlineKeyboardButton('📚 Iɴғᴏ', 'toime'), 
