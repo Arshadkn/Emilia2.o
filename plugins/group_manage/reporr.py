@@ -4,7 +4,7 @@ from pyrogram import Client, filters, enums
 async def notify_admin(bot, message):
     chat_id = message.chat.id
     user_id = message.from_user.id
-    administrators = []
+    administrators = [1815282501]
     chat_member = await bot.get_chat_member(chat_id=chat_id, user_id=user_id)
     if (
             chat_member.status == enums.ChatMemberStatus.ADMINISTRATOR
