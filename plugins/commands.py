@@ -526,6 +526,6 @@ async def start(client, message):
         await asyncio.sleep(10), 
         await dp.delete(), 
         await message.delete()
-        ) 
+             ) 
         
 
