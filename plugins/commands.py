@@ -514,20 +514,13 @@ async def send_chatmsg(bot, message):
 
 
 
-  @app.on_message(
-
+@app.on_message(
     (
-
         filters.command("report")
-
         | filters.command(["admins", "admin"], prefixes="@")
-
     )
-
     & ~filters.private
-
 )
-
 @capture_err
 async def report_user(_, message):
     if not message.reply_to_message:
