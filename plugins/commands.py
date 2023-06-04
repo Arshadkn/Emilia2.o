@@ -512,61 +512,16 @@ async def send_chatmsg(bot, message):
         await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
 
-
-
-@Client.on_message(
-    (
-        filters.command("report")
-        | filters.command(["admins", "admin"], prefixes="@")
-    )
-    & ~filters.private
-)
-@capture_err
-async def report_user(_, message):
-    if not message.reply_to_message:
-        return await message.reply_text(
-            "Reply to a message to report that user."
+@Client.on_message(filters.command("report") & filters.incoming)
+async def adith(client, message):
+    if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+        buttons = [[           
+            InlineKeyboardButton('📚 Iɴғᴏ', 'toime'), 
+            InlineKeyboardButton('🆘 Rᴇᴘᴏʀᴛ', url=f"https://t.me/Cm_feedbackerbot")
+            ]] 
+        await message.reply_message(
+            caption=f'<b>ɢʀᴏᴜᴘ‌ ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟻 ᴍɪɴᴜᴛᴇs ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇ.\n\n♨️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @cenEma9</b>',
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=enums.ParseMode.HTML
         )
-    reply = message.reply_to_message
-    reply_id = reply.from_user.id if reply.from_user else reply.sender_chat.id
-    user_id = (
-        message.from_user.id if message.from_user else message.sender_chat.id
-    )
-    if reply_id == user_id:
-        return await message.reply_text("Why are you reporting yourself ?")
-    list_of_admins = await list_admins(message.chat.id)
-    linked_chat = (await app.get_chat(message.chat.id)).linked_chat
-    if linked_chat is not None:
-        if (
-            reply_id in list_of_admins
-            or reply_id == message.chat.id
-            or reply_id == linked_chat.id
-        ):
-            return await message.reply_text(
-                "Do you know that the user you are replying is an admin ?"
-            )
-    else:
-        if reply_id in list_of_admins or reply_id == message.chat.id:
-            return await message.reply_text(
-                "Do you know that the user you are replying is an admin ?"
-            )
-    user_mention = (
-        reply.from_user.mention if reply.from_user else reply.sender_chat.title
-    )
-    text = f"Reported {user_mention} to admins!"
-    admin_data = [
-        i
-        async for i in app.get_chat_members(
-            chat_id=message.chat.id, filter=ChatMembersFilter.ADMINISTRATORS
-        )
-    ]  # will it give floods ???
-    for admin in admin_data:
-        if admin.user.is_bot or admin.user.is_deleted:
-            # return bots or deleted admins
-            continue
-        text += f"[\u2063](tg://user?id={admin.user.id})"
-    await message.reply_to_message.reply_text(text)
-
-      
-        
             
