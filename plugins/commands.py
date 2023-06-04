@@ -519,7 +519,7 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('ℹ️ 𝙷𝙴𝙻𝙿 ℹ️', url=f"https://t.me/{temp.U_NAME}?start=help")
             ]]
-        dp = await message.reply_text
+        dp = await message.reply_text(
         text=f"hi hello", 
         reply_markup=InlineKeyboardMarkup(buttons),
         disable_web_page_preview=True,                    
@@ -527,3 +527,5 @@ async def start(client, message):
         await dp.delete(), 
         await message.delete()
         ) 
+        
+
