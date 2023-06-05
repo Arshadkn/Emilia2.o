@@ -517,7 +517,7 @@ async def send_chatmsg(bot, message):
 @Client.on_message(filters.command("report") & filters.incoming)
 async def start(client, message):
     curr = datetime.now(timezone(TIMEZONE))
-    date = curr.strftime('%d %B, %Y')
+    date = curr.strftime('%d-%B-%Y')
     time = curr.strftime('%I:%M:%S %p')
     day = curr.strftime("%A")
     search = message.text
