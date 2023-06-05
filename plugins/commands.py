@@ -240,7 +240,6 @@ async def start(client, message):
                         InlineKeyboardButton(text=f'🌿 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🌿', callback_data='gxneo')
                     ]
                     ]
-    await message.reply_chat_action("typing")
     m=await message.reply_sticker("CAACAgUAAxkBAAEBxBhiRKABr6uP_mqlQJ2dmlnfRThqSAACBAADwSQxMYnlHW4Ls8gQHgQ") 
     await asyncio.sleep(1) 
     await m.delete(1)
