@@ -2,6 +2,8 @@ import os
 import logging
 import random
 import asyncio
+from datetime import datetime
+from pytz import timezone
 from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
@@ -17,6 +19,7 @@ import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
+TIMEZONE = (os.environ.get("TIMEZONE", "Asia/Kolkata"))
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
@@ -513,13 +516,16 @@ async def send_chatmsg(bot, message):
 
 @Client.on_message(filters.command("report") & filters.incoming)
 async def start(client, message):
+    curr = datetime.now(timezone(TIMEZONE))
+    date = curr.strftime('%d %B, %Y')
+    time = curr.strftime('%I:%M:%S %p')
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[           
             InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 📢', url=f'https://t.me/{SUPPORT_CHAT}')
             ],[
             InlineKeyboardButton('ℹ️ 𝙷𝙴𝙻𝙿 ℹ️', url=f"https://t.me/{temp.U_NAME}?start=help")
             ]]
-        dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK, query=search), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)                    
+        dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK, day=date), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)                    
         await asyncio.sleep(10)
         await dp.delete() 
         await message.delete(1)
