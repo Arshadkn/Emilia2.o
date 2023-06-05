@@ -523,13 +523,6 @@ async def start(client, message):
     ido = message.from_user.id
     search = message.text
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        f1 = await query.message.reply_text("Hy..")
-        await asyncio.sleep(5)
-        f2 = await f1.edit("my name is")
-        await asyncio.sleep(5)
-        f3 = await f2.edit("meenakshi...")
-        await asyncio.sleep(5)
-        await f3.delete()
         buttons = [[           
             InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 📢', url=f'https://t.me/{SUPPORT_CHAT}')
             ],[
