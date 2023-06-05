@@ -542,13 +542,13 @@ async def start(client, message):
         await query.message.edit_text(
             text="▣▣▣▣▣"
         )
-        await query.message.edit_text(
+        await message.reply_chat_action("typing")
         dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK, dai=date, mento=day, sarch=search, tim=time), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)                    
         await asyncio.sleep(10)
         await dp.delete() 
         await message.delete(1)
-        )
-        await message.reply_chat_action("typing")
+      
+        
              
         
 
