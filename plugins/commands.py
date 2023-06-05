@@ -240,9 +240,6 @@ async def start(client, message):
                         InlineKeyboardButton(text=f'🌿 Fɪʟᴇ sɪᴢᴇ 【 {size} 】🌿', callback_data='gxneo')
                     ]
                     ]
-    m=await message.reply_sticker("CAACAgUAAxkBAAEBxBhiRKABr6uP_mqlQJ2dmlnfRThqSAACBAADwSQxMYnlHW4Ls8gQHgQ") 
-    await asyncio.sleep(1) 
-    await m.delete(1)
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
