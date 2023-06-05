@@ -515,7 +515,7 @@ async def send_chatmsg(bot, message):
         await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
 @Client.on_message(filters.command("report") & filters.incoming)
-async def start(client, message):
+async def report(client, message):
     curr = datetime.now(timezone(TIMEZONE))
     date = curr.strftime('%d-%B-%Y')
     time = curr.strftime('%I:%M:%S %p')
