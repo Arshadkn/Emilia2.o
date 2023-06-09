@@ -514,7 +514,7 @@ async def send_chatmsg(bot, message):
     else:
         await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
-@Client.on_message(filters.command("report") | filters.regex("@admins") & filters.incoming)
+@Client.on_message(filters.command("report") | filters.regex("@admins") | filters.regex("@admin") & filters.incoming)
 async def report(client, message):
     curr = datetime.now(timezone(TIMEZONE))
     date = curr.strftime('%d-%B-%Y')
@@ -526,13 +526,9 @@ async def report(client, message):
         buttons = [[           
             InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 📢', url=f'https://t.me/{SUPPORT_CHAT}')
             ]]
-        await message.edit("● ○ ○ ○ ")
-        await message.edit("● ● ○ ○ ")
-        await message.edit("● ● ● ○ ")
-        await message.edit("● ● ● ● ")
         dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK, dai=date, mento=day, sarch=search, tim=time, iu=ido), disable_web_page_preview=True)                    
         await dp.send_message(LOG_CHANNEL) 
-        await asyncio.sleep(10)
+        await asyncio.sleep(60)
         await dp.delete() 
         await message.delete(1)
       
