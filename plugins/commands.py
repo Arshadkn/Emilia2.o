@@ -531,13 +531,17 @@ async def report(client, message):
             InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 📢', url=f'https://t.me/{SUPPORT_CHAT}')
             ]]
         await message.reply_chat_action(enums.ChatAction.TYPING)
-        b=await message.reply_sticker("CAACAgUAAxkBAAIFNGJSlfOErbkSeLt9SnOniU-58UUBAAKaAAPIlGQULGXh4VzvJWoeBA")
-        await asyncio.sleep(1)
-        await b.delete()
+        f1 = await query.message.reply_text("Hy..")
+        await asyncio.sleep(5)
+        f2 = await f1.edit("my name is")
+        await asyncio.sleep(5)
+        f3 = await f2.edit("meenakshi...")
+        await asyncio.sleep(5)
+        await f3.delete()
         dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK, dai=date, mento=day, sarch=search, tim=time, iu=ido), disable_web_page_preview=True)                    
         await asyncio.sleep(60)
         await dp.delete() 
-        await message.delete(1)
+        await message.delete()
       
         
              
