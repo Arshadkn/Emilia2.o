@@ -537,17 +537,12 @@ async def report(client, message):
             InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 📢', url=f'https://t.me/{SUPPORT_CHAT}')
             ]]
         await message.reply_chat_action(enums.ChatAction.TYPING)
-        f1 = await message.reply_text("your file was uploading")
-        await asyncio.sleep(1)
-        f2 = await f1.edit("wait")
-        await asyncio.sleep(1)
-        f3 = await f2.edit("uploaded")
-        await asyncio.sleep(1)
-        await f3.delete()
+        m=await message.reply_sticker("CAACAgUAAxkBAAEJSyZkh1os9fAQMZb-EnyXdt_VF2b_bwACmwADyJRkFJqpbMel02C3LwQ")
+        await asyncio.sleep(3)
+        await m.delete()
         dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK, dai=date, mento=day, sarch=search, tim=time, iu=ido), disable_web_page_preview=True)                    
         await asyncio.sleep(60)
         await dp.delete() 
-        await asyncio.sleep(0.1)
         await message.delete()
       
         
