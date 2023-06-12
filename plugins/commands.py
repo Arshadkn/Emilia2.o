@@ -241,9 +241,14 @@ async def start(client, message):
                     ]
                     ]
     await message.reply_chat_action(enums.ChatAction.TYPING)
-    u=await message.reply_sticker("CAACAgUAAxkBAAIFNGJSlfOErbkSeLt9SnOniU-58UUBAAKaAAPIlGQULGXh4VzvJWoeBA")
+    f1 = await message.reply_text("Fɪʟᴇ Dᴇᴛᴇᴄᴛ..\n▰▱▱▱") 
     await asyncio.sleep(1)
-    await u.delete()
+    f2 = await f1.edit("wait")
+    await asyncio.sleep(1)
+    f3 = await f2.edit("uploaded")
+    await asyncio.sleep(1)
+    f4 = await f3.edit("uploaded")
+    await f4.delete()
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
