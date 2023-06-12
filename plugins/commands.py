@@ -531,7 +531,7 @@ async def report(client, message):
             InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 📢', url=f'https://t.me/{SUPPORT_CHAT}')
             ]]
         await message.reply_chat_action(enums.ChatAction.TYPING)
-        f1 = await query.message.reply_text("Hy..")
+        f1 = await message.reply_text("Hy..")
         await asyncio.sleep(5)
         await f1.delete()
         dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK, dai=date, mento=day, sarch=search, tim=time, iu=ido), disable_web_page_preview=True)                    
