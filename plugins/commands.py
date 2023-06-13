@@ -247,9 +247,9 @@ async def start(client, message):
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup(buttons),
         protect_content=True if pre == 'filep' else False,
-    await asyncio.sleep(5)
-    await hp.delete() 
-    await message.delete()
+    await asyncio.sleep(5), 
+    await hp.delete(), 
+    await message.delete(), 
         )
                     
 
