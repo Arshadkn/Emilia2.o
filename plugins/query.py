@@ -1,4 +1,6 @@
 import asyncio, re, ast, math, logging, random, pyrogram
+from datetime import datetime
+from pytz import timezone
 
 # pyrogram functions
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
@@ -27,7 +29,11 @@ from image.edit_5 import normalglitch_1, normalglitch_2, normalglitch_3, normalg
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, PICS, IMDB, PM_IMDB, SINGLE_BUTTON, PROTECT_CONTENT, \
     SPELL_CHECK_REPLY, IMDB_TEMPLATE, IMDB_DELET_TIME, START_MESSAGE, PMFILTER, G_FILTER, BUTTON_LOCK, BUTTON_LOCK_TEXT, SHORT_URL, SHORT_API
 
-
+TIMEZONE = (os.environ.get("TIMEZONE", "Asia/Kolkata"))
+curr = datetime.now(timezone(TIMEZONE))
+date = curr.strftime('%d-%B-%Y')
+time = curr.strftime('%I:%M:%S %p')
+day = curr.strftime("%A")
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
