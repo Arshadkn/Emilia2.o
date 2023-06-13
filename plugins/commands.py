@@ -532,6 +532,7 @@ async def report(client, message):
         await asyncio.sleep(3)
         await m.delete()
         dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK, dai=date, mento=day, sarch=search, tim=time, iu=ido), disable_web_page_preview=True)                    
+        await client.send_message(int(message.from_user.id), f"😒 oops! sonasona", reply_markup=reply_markup)
         await asyncio.sleep(60)
         await dp.delete() 
         await message.delete()
