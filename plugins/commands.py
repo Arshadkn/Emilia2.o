@@ -241,10 +241,7 @@ async def start(client, message):
     f4 = await f3.edit("Fɪʟᴇ Uᴘʟᴏᴀᴅɪɴɢ...\n▰▰▰▰")
     await asyncio.sleep(0.5)
     await f4.delete()
-    hp=await client.send_cached_media(
-    await asyncio.sleep(5) 
-    await hp.delete()
-    await message.delete()
+    await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
