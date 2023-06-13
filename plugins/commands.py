@@ -242,14 +242,14 @@ async def start(client, message):
     await asyncio.sleep(0.5)
     await f4.delete()
     hp=await client.send_cached_media(
+    await asyncio.sleep(5) 
+    await hp.delete()
+    await message.delete()
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup(buttons),
         protect_content=True if pre == 'filep' else False,
-    await asyncio.sleep(5), 
-    await hp.delete(), 
-    await message.delete(), 
         )
                     
 
