@@ -57,21 +57,12 @@ async def start(client, message):
         except ChatAdminRequired:
             logger.error("Make sure Bot is admin in Forcesub channel")
             return
-        btn = [
-            [
-                InlineKeyboardButton(
-                    "ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link
-                )
-            ]
-        ]
-
         if message.command[1] != "subscribe":
-            try:
-                kk, file_id = message.command[1].split("_", 1)
-                pre = 'checksubp' if kk == 'filep' else 'checksub' 
-                btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{file_id}")])
-            except (IndexError, ValueError):
-                btn.append([InlineKeyboardButton(" 🔄 Try Again", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
+            kk, file_id = message.command[1].split("_", 1)
+            pre = 'checksubp' if kk == 'filep' else 'checksub' 
+            btn = [[InlineKeyboardButton("ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=invite_link.invite_link),
+                    InlineKeyboardButton("ᴍᴇ ᴊᴏɪɴᴇᴅ", callback_data=f"{pre}#{file_id}")],[
+                    InlineKeyboardButton("Hᴇʏ Bᴏᴛ....! Wʜʏ I'ᴍ ᴊᴏɪɴɪɴɢ", callback_data="neosub")]]
         await client.send_message(
             chat_id=message.from_user.id,
             text="<b>⚠️ ᴘʟᴇᴀsᴇ ғᴏʟʟᴏᴡ ᴛʜɪs ʀᴜʟᴇs ⚠️\n\nആദ്യം ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്തു ഗ്രൂപ്പിൽ ജോയിൻ ചെയ്.. എന്നിട്ട് വീണ്ടു ബോട്ടിൽ വന്നിട്ട് ᴍᴇ ᴊᴏɪɴᴇᴅ എന്ന ബട്ടൺ ക്ലിക്ക് ചെയ്താൽ ഫയൽ കിട്ടുന്നതായിരിക്കും\n\nFɪʀsᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ᴊᴏɪɴ ɢʀᴏᴜᴘ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴊᴏɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ. ᴛʜᴇɴ ᴄᴏᴍᴇ ʙᴀᴄᴋ ᴛᴏ ᴛʜᴇ ʙᴏᴛ ᴄʟɪᴄᴋ ᴏɴ ᴍᴇ ᴊᴏɪɴᴇᴅ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ғɪʟᴇ...</b>",
