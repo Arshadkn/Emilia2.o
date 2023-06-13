@@ -324,8 +324,10 @@ async def advantage_spell_chok(msg):
     try:
         g_s = await search_gagala(query)
         g_s += await search_gagala(msg.text)
+    
     except
         pass
+        
     gs_parsed = []
     if not g_s:
         k = await msg.reply("I couldn't find any movie in that name.")
