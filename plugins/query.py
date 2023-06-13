@@ -1,6 +1,7 @@
 import asyncio, re, ast, math, logging, random, pyrogram
 from datetime import datetime
 from pytz import timezone
+import os
 
 # pyrogram functions
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
