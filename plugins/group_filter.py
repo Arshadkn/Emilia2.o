@@ -325,7 +325,7 @@ async def advantage_spell_chok(msg):
         g_s = await search_gagala(query)
         g_s += await search_gagala(msg.text)
     
-    except
+    except:
         pass
         
     gs_parsed = []
