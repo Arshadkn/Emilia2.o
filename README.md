@@ -14,7 +14,9 @@
 [![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/MrMKN/PROFESSOR-BOT/blob/main/LICENSE)
 [![Sparkline](https://stars.medv.io/MrMKN/PROFESSOR-BOT.svg)](https://stars.medv.io/MrMKN/PROFESSOR-BOT)
 
+## deploye to render
 
+<a href="https://render.com/deploy?repo="><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" width="120"></a>
 
 ## Features
 
