@@ -515,26 +515,7 @@ async def send_chatmsg(bot, message):
     else:
         await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
-@Client.on_message(filters.("report") | filters.regex("@admins") | filters.regex("@admin") & filters.incoming)
-async def report(client, message):
-    curr = datetime.now(timezone(TIMEZONE))
-    date = curr.strftime('%d-%B-%Y')
-    time = curr.strftime('%I:%M:%S %p')
-    day = curr.strftime("%A")
-    ido = message.from_user.id
-    search = message.text
-    if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        buttons = [[           
-            InlineKeyboardButton('📢 𝚄𝙿𝙳𝙰𝚃𝙴𝚂 📢', url=f'https://t.me/{SUPPORT_CHAT}')
-            ]]
-        await message.reply_chat_action(enums.ChatAction.TYPING)
-        m=await message.reply_sticker("CAACAgUAAxkBAAEJSyZkh1os9fAQMZb-EnyXdt_VF2b_bwACmwADyJRkFJqpbMel02C3LwQ")
-        await asyncio.sleep(3)
-        await m.delete()
-        dp = await message.reply(START_MESSAGE.format(user=message.from_user.mention if message.from_user else message.chat.title, bot=temp.B_LINK, dai=date, mento=day, sarch=search, tim=time, iu=ido), disable_web_page_preview=True)                    
-        await asyncio.sleep(60)
-        await dp.delete() 
-        await message.delete()
+
       
         
              
